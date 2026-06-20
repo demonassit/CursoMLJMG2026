@@ -18,7 +18,7 @@ faces = fetch_olivetti_faces(shuffle=True, random_state=40)
 X = faces.data 
 
 # vamos a crear nuestro modelos para identificar esos rostros por ejemplo 15 rostros
-nmf = NMF(n_components=15, random_state=40)
+nmf = NMF(n_components=15, random_state=60)
 
 #vamos ajustar el modelo, para obtener los "pesos" 
 #primero debemos obtener los rostros
