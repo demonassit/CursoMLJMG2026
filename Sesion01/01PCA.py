@@ -16,7 +16,7 @@ y = data.target #etiquetando para cada clase
 
 #tenemos que estandarizar las variables para reducir las dimensiones
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X_scaled = scaler.fit_transform(X)  #el modelo va aprender con las primeras 30 imagenes
 
 #vamos aplicar los elementos del calculo
 # V = vectores singulares izquierdos de la matriz de 3 variables
@@ -33,6 +33,8 @@ pc2 = Vh[1] #el valor ortogonal respecto de pc1
 
 W = Vh[:2].T # aqui estamos formando nuestras variables componentes para extraer los coeficientes de la matriz transpuesta
 
+X_nueva = X_scaled.dot(W)   #esto es lo que empieza realmente a reducir las dimensiones
+
 #aplicamos la varianza
 varianza_total = (S**2).sum()
 varianza_explicada = (S[:2]**2)/varianza_total
@@ -47,7 +49,7 @@ plt.scatter(
     X_nueva[:, 1], #componente principal para y
     c = y, # segun la clase malingo [0] y benigno[1]
     cmap = 'coolwarm', # paleta de colores
-    aplha = 0.7 # es el nivel de transparencia de los puntos que se superponen  
+    alpha = 0.7 # es el nivel de transparencia de los puntos que se superponen  
 )
 
 plt.xlabel('PC1')
