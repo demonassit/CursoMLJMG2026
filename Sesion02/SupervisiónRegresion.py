@@ -25,7 +25,7 @@ X, y = housing.data, housing.target # x es todo el dataset y el precio
 X_train, X_test, y_train, y_test = train_test_split(
     X, y,
     test_size=0.2,
-    random_state=40
+    random_state=42
 )
 
 #definimos el modelo
