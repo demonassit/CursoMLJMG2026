@@ -55,5 +55,5 @@ plt.yticks(range(10), [data.feature_names[i] for i in indices])
 plt.xlabel('Importancia (reduccion media del indice: )')
 plt.title('Top 10 de caracteristicas importantes con RF')
 #invertir el orden de las caracteristicas
-plt.gca().invert_xaxis
+plt.gca().invert_yaxis
 plt.show()
