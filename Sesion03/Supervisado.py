@@ -28,7 +28,7 @@ data = load_breast_cancer()
 X, y = data.data, data.target  #0 maligno 1 benigno
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.25, random_state=40, stratify=y
+    X, y, test_size=0.25, random_state=50, stratify=y
 )
 
 #Primero necesitamos es el escalado para mejorar el mejor del mejor del entrenamiento 
@@ -53,7 +53,7 @@ param_grid = {
 # scoring = 'criterio', f1 es el score que sirve para maximizar F1-Score, (es un clasificador de balance de presición con regresión)
 
 gs = GridSearchCV(
-    RandomForestClassifier(random_state=40),
+    RandomForestClassifier(random_state=50),
     param_grid,
     cv=5,
     scoring='f1',
