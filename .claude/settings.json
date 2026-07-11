@@ -6,7 +6,12 @@
       "Bash(find \"/c/Users/demon/AppData/Local/Programs/Python/Python313/Lib/site-packages/shiny\" -iname \"*fontawesome*\" -o -iname \"*font-awesome*\" 2>/dev/null | head -20)",
       "Read(//c/Users/demon/AppData/Local/Programs/Python/Python313/Lib/site-packages/shiny/**)",
       "Bash(find \"/c/Users/demon/AppData/Local/Programs/Python/Python313/Lib/site-packages/shiny\" -iname \"*.css\" 2>/dev/null | grep -i fa | head -20 *)",
-      "Read(//c/Users/demon/AppData/Local/Programs/Python/Python313/Lib/site-packages/**)"
+      "Read(//c/Users/demon/AppData/Local/Programs/Python/Python313/Lib/site-packages/**)",
+      "Read(//c/Users/demon/Downloads/**)",
+      "Bash(python -c \"import shiny; print\\(shiny.__version__\\)\")",
+      "Read(//c/Users/demon/**)",
+      "Bash(python -c ' *)",
+      "Bash(export PYTHONIOENCODING=utf-8)"
     ]
   }
 }
