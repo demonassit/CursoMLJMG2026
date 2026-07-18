@@ -11,7 +11,16 @@
       "Bash(python -c \"import shiny; print\\(shiny.__version__\\)\")",
       "Read(//c/Users/demon/**)",
       "Bash(python -c ' *)",
-      "Bash(export PYTHONIOENCODING=utf-8)"
+      "Bash(export PYTHONIOENCODING=utf-8)",
+      "Bash(pip show *)",
+      "PowerShell(rsconnect deploy shiny \"C:\\\\Users\\\\demon\\\\OneDrive\\\\Escritorio\\\\CursoMLJMG2026\\\\Visualizaci�n\\\\EjemploPublicaci�n\" --name demonassit --title app_ml)",
+      "Bash(cd \"c:/Users/demon/OneDrive/Escritorio/CursoMLJMG2026\" && cp \"Visualización/Sesion05/features_clasificador.json\" \"Visualización/Sesion05/features_permanencia.json\" \"Visualización/Sesion05/features_salario.json\" \"Visualización/Sesion05/modelo_clasificador_lr.pkl\" \"Visualización/Sesion05/modelo_permanencia.pkl\" \"Visualización/Sesion05/modelo_salario.pkl\" \"Visualización/EjemploPublicación/\" && ls -la \"Visualización/EjemploPublicación/\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 13888 //F)",
+      "Bash(pip index *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\demon\\OneDrive\\Escritorio\\CursoMLJMG2026\\Visualización\\Sesion05"
     ]
   }
 }
