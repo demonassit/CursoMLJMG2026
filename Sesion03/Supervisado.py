@@ -34,7 +34,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 #Primero necesitamos es el escalado para mejorar el mejor del mejor del entrenamiento 
 scaler = StandardScaler()
 X_train_s = scaler.fit_transform(X_train)
-X_test_s = scaler.fit_transform(X_test)
+X_test_s = scaler.transform(X_test)  # transform: usamos la media y desviacion aprendidas en entrenamiento
 
 #para la busqueda de los hiperparametros tenemos que definir sus combinaciones 
 # ocupar n_estimator, numero de arboles en el bosque 50 a 100
@@ -61,7 +61,7 @@ gs = GridSearchCV(
 )
 
 #ahora si quiere que lo entrenes y loe values tenemos que definir las combinaciones k=5 * n = 30(caracteristicas)
-gs.fit(X_train, y_train)
+gs.fit(X_train_s, y_train)  # entrenamos con los datos escalados, igual que los que usamos para predecir
 
 #al modelo ya entrenado vamos con los mejores hiperparametros, para hacer un reentrenamiento
 best = gs.best_estimator_
