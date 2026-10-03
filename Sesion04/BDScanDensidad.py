@@ -1,9 +1,9 @@
-# BDScan definie el radio de vecindad de cada punto llamado epsilon (eps), si dos puntos estana a distancias <= eps son vecinos, un punto con al menos min_samples, vecinos dentro de eps es el nucleo, y los nucleos y sus vecinos forman clusters, los puntos sin ningun nucleo cercano son etiquetados como -1 (ruido)
+# DBSCAN definie el radio de vecindad de cada punto llamado epsilon (eps), si dos puntos estana a distancias <= eps son vecinos, un punto con al menos min_samples, vecinos dentro de eps es el nucleo, y los nucleos y sus vecinos forman clusters, los puntos sin ningun nucleo cercano son etiquetados como -1 (ruido)
 
 # los efectos epsilon pueden variar acorde a los dataset
 # eps es muy pequeño radio es estrecho, pocos vecinos y muchos puntos son ruido, eso fragmenta el modelo 
 # si eps es adecuado significa que el radio es justo, detecta correctamente las regiones densas, y el numero de clusters es coherente a la estructura
-# si eps es grande, radio es muy amplio, casi todos los puntos son vecinos entre si, por lo tanto BDScan fusiona todo en un solo cluster
+# si eps es grande, radio es muy amplio, casi todos los puntos son vecinos entre si, por lo tanto DBSCAN fusiona todo en un solo cluster
 
 from sklearn.cluster import DBSCAN
 from sklearn.datasets import make_moons
@@ -18,7 +18,7 @@ X, _ = make_moons(n_samples=500, noise=0.1, random_state=42)
 # tenemos que medir la distancia euclidiana de los parametros que vamos a obtener, para ello tenemos que aplicarlo con un formato estandar
 X = StandardScaler().fit_transform(X)
 
-#configuramos los valores de eps, con el mismo de min_samples, para aislar los efectos
+#configuramos los valores de eps, con el mismo min_samples, para aislar los efectos
 configuraciones = [
     {'eps':0.05, 'titulo':"eps= 0.05 (muy pequeño)\n radio estrecho"},
     {'eps':0.20, 'titulo':"eps= 0.20 (adecuado)\n detectar las 2 lunas de forma correcta"},
@@ -27,7 +27,7 @@ configuraciones = [
 
 # vamos a entrenarlo
 fig, axes = plt.subplots(1,3, figsize=(16,5))
-fig.suptitle('BDScan - Efecto del parametro de eps, sobre la densidad de datos \n {dataset make_moons}', fontsize=13, fontweight='bold')
+fig.suptitle('DBSCAN - Efecto del parametro de eps, sobre la densidad de datos \n (dataset make_moons)', fontsize=13, fontweight='bold')
 
 for ax, cfg in zip(axes, configuraciones):
     db = DBSCAN(eps=cfg['eps'], min_samples=5)

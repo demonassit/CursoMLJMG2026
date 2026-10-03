@@ -13,7 +13,7 @@ img = load_sample_image('flower.jpg')
 alto, ancho, canal = img.shape
 
 print(f"Forma original de la imagen {img.shape}")
-print(f"Pixeles totales : {alto, ancho}")
+print(f"Pixeles totales : {alto * ancho}")
 
 # preprocesamiento para la normalización de los kmeans [0,1], dentro del rango de 3 matrices con todas las combinaciones de 0 a 255
 
@@ -52,11 +52,11 @@ axes[0].set_title('Imagen Original')
 axes[0].axis('off')
 
 #la imagenreconstruida
-titulos = [f'k = {k}\{k} Colores unicos' for k in valores_k]
+titulos = [f'k = {k}\n{k} colores unicos' for k in valores_k]
 
 for ax, img_seg, titulo in zip(axes[1:], imagenes_segmentadas, titulos):
     ax.imshow(img_seg)
-    ax.set_title(titulos)
+    ax.set_title(titulo)
     ax.axis('off')
 
 plt.tight_layout()
